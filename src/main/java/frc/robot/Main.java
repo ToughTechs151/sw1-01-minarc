@@ -20,7 +20,8 @@ public final class Main {
   /**
    * This is the standard main function as required by Java. The JVM looks for
    * this method as the starting point for execution.
-   * We instanstiate a new robot from our Robot class in the Robot.java file and
+   * We instanstiate a new robot from our Robot class in the Robot.java file 
+   * using a constructor reference (Robot::new) and
    * pass it into the startRobot method from WPIlib. WPILib will do all the
    * required initialization of the Roborio or simulator, depending on the 
    * environment we are running on.
