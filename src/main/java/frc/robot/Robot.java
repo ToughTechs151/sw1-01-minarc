@@ -36,6 +36,17 @@ public class Robot extends TimedRobot {
      * but it can be useful, especially if you want to have more than one 
      * configuration you want to use, i.e. if you have different robots with 
      * different ports.
+     *
+     * We can also create a Constants.java file where we put other contants used
+     * by the robot. Anytime you type a number into robot code you should consider
+     * whether that number should be changed to a variable from the RobotMap.java
+     * file or a variable from the Constants.java file. If the number represents
+     * something in the robot configuration, put it in the RobotMap file. If a number
+     * needs to change in concert with something else or is used in more than one
+     * place, put it in the Constants.java file and add comments that document the
+     * relationships and anything else about the constant. Don't over do it. If 
+     * a number is only used in one place you can define the variable in the same
+     * class and keep it there. Remember to add comments though.
      **/
     /* Create and assign the two drive motors. */
     private final PWMVictorSPX m_leftMotor = new PWMVictorSPX(0);
