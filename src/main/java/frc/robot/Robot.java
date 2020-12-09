@@ -58,6 +58,23 @@ public class Robot extends TimedRobot {
   
     @Override
     public void teleopPeriodic() {
+      /**
+       * In this extremly simple example we don't actually follow the standard
+       * Command Robot pattern. With the CRP we divide the robot code into 
+       * separate parts and put them in separate folders. We have a subsystems 
+       * folder where we put all the code for each of the subsystems. Likewise
+       * we have a folder called "commands" were we put all of the separate 
+       * robot commands. We call the scheduler to run our commands and the 
+       * commands in turn tell the scheduler what subsystems the commands 
+       * want to use. In this example we don't do any of that, instead we
+       * only have one subsystem, the differential drive, and one thing we
+       * want it to do, which is to set the drive motor speed based on the 
+       * current joystick values, using all the defaults. We use the 
+       * teleopPeriodic function (which gets called every 20ms) to read the 
+       * current joystick value and pass that to the drive system to run 
+       * the motors. Notice that since we set the motors every 20ms we do not 
+       * have to worry about the safety watchdog timer. 
+       **/
       // Drive with arcade drive.
       // That means that the Y axis drives forward
       // and backward, and the X turns left and right.
