@@ -1,7 +1,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.PWMVictorSPX;
+import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
@@ -56,6 +56,12 @@ public class Robot extends TimedRobot {
     /* Get the joystick object we will be reading to control the drive. */
     private final Joystick m_stick = new Joystick(0);
   
+    @Override
+    public void robotInit()  {
+      /* WPILib used to invert the right motor automatically, but no more. Do it ourselves. */
+      m_rightMotor.setInverted(true);
+    }
+
     @Override
     public void teleopPeriodic() {
       /**
